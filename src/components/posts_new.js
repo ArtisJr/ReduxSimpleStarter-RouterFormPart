@@ -26,13 +26,16 @@ class PostsNew extends Component {
           name="content"
           component={this.renderField}
         />
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
       </form>
     );
   }
 }
 
 function validate(values) {
-  const errors = {};
+  const error = {};
 
   if (!values.title) {
     error.title = 'Enter a title!';
@@ -46,7 +49,7 @@ function validate(values) {
     error.content = 'Enter some content!';
   }
 
-  return errors;
+  return error;
 }
 
 export default reduxForm({
